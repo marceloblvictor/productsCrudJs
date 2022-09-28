@@ -1,0 +1,90 @@
+
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <script type="text/javascript" src="script.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;1,900&display=swap" rel="stylesheet">
+    </head>
+    <body onload="showForm()">
+
+        <div id="main-container">
+            
+            <div id="buttons-header">
+                <button id="form-button"  onClick="showForm()">Novo Item</button>
+                <button id="table-button" onClick="showTable()">Listar Itens</button>
+            </div>
+            
+            <hr>
+
+            <div id="form-container">
+                <h2>Cadastrar Item</h2>
+                
+                <div class="box"><b>Modelo</b>
+                    <div>
+                        <input type="text" id="modeloInput">
+                    </div>
+                </div>
+
+                <div class="box"><b>Marca</b>
+                    <div>
+                        <input type="text" id="marcaInput">
+                    </div>
+                </div>
+        
+                <div class="box"><b>Tipo</b><br>
+                    <select name="tipoDropdown" id="tipoInput">
+                        <option value="-">--Selecione a opcao--</option>
+                        <option value="Tv">TV</option>
+                        <option value="Computador">Computador</option>
+                        <option value="Celular">Celular</option>
+                        <option value="PS5">PS5</option>
+                      </select>
+                </div>
+
+                <div class="box">
+                    <b>Quantidade</b><br>
+                    <input type="number" id="quantityInput" min="0" value="0" style="width: 45px"/>
+                </div>
+        
+                <div class="box options-container"><b>Condição</b><br>
+                    Novo<input type="radio" id="radio1" name="condition" value="Novo"><br>
+                    Usado<input type="radio" id="radio2" name="condition" value="Usado"><br>
+                </div>
+
+                <div class="box options-container"> <b>Diferenciais</b> <br>
+                    Full HD<input type="checkbox" id="check1" name="Full HD" value="Full HD" ><br>
+                    5G<input type="checkbox"  id="check2" name="5G" value="5G"><br>
+                    Dual Chip<input type="checkbox" id="check3" name="Dual Chip" value="Dual Chip">
+                </div>
+              
+
+                <div class="box buttons-footer">
+                    <button class="small-button" onClick="createProduct()">Cadastrar</button>
+                    <button class="small-button" onClick="clearForm()">Limpar</button>
+                </div>
+
+
+            </div>
+
+            <div id="table-container">
+                <h2>Listar Itens</h2>
+                <table id="products-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Modelo</th>
+                            <th>Marca</th>
+                            <th>Quantidade</th>
+                            <th>Ações</th>
+                          </tr>
+                    </thead>
+                    <tbody id="table-body">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
